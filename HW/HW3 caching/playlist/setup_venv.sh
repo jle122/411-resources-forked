@@ -1,12 +1,14 @@
 #!/bin/bash
 
 # Set the name of the virtual environment directory
-VENV_DIR=
-REQUIREMENTS_FILE=
+VENV_DIR="venv"
+REQUIREMENTS_FILE="requirements.lock"
 
 # Check if the virtual environment already exists
 if [ ! -d "$VENV_DIR" ]; then
   echo "Creating virtual environment..."
+  python3 -m venv "$VENV_DIR"
+  source "$VENV_DIR/bin/activate"
 
 
   # Install dependencies from requirements.lock if it exists
